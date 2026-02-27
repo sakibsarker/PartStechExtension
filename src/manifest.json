@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "PartsTech → My Website",
+  "version": "1.0.0",
+  "description": "Inject an 'Add to My Website' button on PartsTech product pages and sync them to your backend.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://app.partstech.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.partstech.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PartsTech → My Website",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

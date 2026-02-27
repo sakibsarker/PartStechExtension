@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PartsTech → My Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-body">
+    <header class="popup-header">
+      <div class="popup-logo">⚙️</div>
+      <div>
+        <h1 class="popup-title">PartsTech Sync</h1>
+        <p class="popup-subtitle">My Website Integration</p>
+      </div>
+    </header>
+
+    <main class="popup-main">
+      <!-- JWT Token Section -->
+      <section class="popup-section">
+        <label class="popup-label" for="token-input">JWT Token</label>
+        <textarea
+          id="token-input"
+          class="popup-textarea"
+          placeholder="Paste your JWT token here…"
+          rows="5"
+          spellcheck="false"
+          autocomplete="off"
+        ></textarea>
+        <p class="popup-hint">
+          Copy your token from your web app's browser storage
+          (<code>localStorage</code>) and paste it above.
+        </p>
+      </section>
+
+      <!-- API Base URL Section -->
+      <section class="popup-section">
+        <label class="popup-label" for="api-url-input">API Base URL</label>
+        <input
+          id="api-url-input"
+          class="popup-input"
+          type="url"
+          placeholder="https://api.yourwebsite.com"
+          spellcheck="false"
+          autocomplete="off"
+        />
+        <p class="popup-hint">
+          Your backend URL (without trailing slash). Must include
+          <code>/api/parts</code> endpoint.
+        </p>
+      </section>
+
+      <!-- Status message -->
+      <p id="status-msg" class="popup-status" aria-live="polite"></p>
+
+      <!-- Actions -->
+      <div class="popup-actions">
+        <button id="save-btn" class="btn btn--primary">Save</button>
+        <button id="clear-btn" class="btn btn--danger">Clear All</button>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <span id="token-status" class="token-status token-status--none"
+        >No token saved</span
+      >
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
